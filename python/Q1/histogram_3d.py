@@ -44,9 +44,12 @@ def draw_histogram_3d():
     data = import_demands()
     categories = data['categories']
     legend = {}
-    for category in categories:
-        if category == '其它':
-            break
+    """
+    , 'Community Service', 'Finance and Economic'
+    """
+    categories_name = ['Human Resource', 'Others', 'Science and Technology']
+
+    for category in categories_name:
 
         y = []
         x = []
@@ -73,6 +76,10 @@ def draw_histogram_3d():
         ax.bar3d(x, y, z, dx, dy, dz, color=color, zsort='average', alpha=0.05)
         proxy = plt.Rectangle((0, 0), 1, 1, fc=color)
         legend[category] = proxy
+
+        # if category == 'Others':
+        #     break
+
         counter += 1
 
     proxys = []
@@ -81,8 +88,14 @@ def draw_histogram_3d():
         names.append(category)
         proxys.append(legend[category])
 
-    ax.legend(proxys, names)
+    ax.set_xlabel('Time')
+    ax.set_ylabel('Categories')
+    ax.set_zlabel('Total Demands')
+    # ax.set_title('The bar chart of the change about total demands in five career categories')
+    # ax.set_title('The bar chart of the change about total demands in five career categories')
 
+    ax.legend(proxys, names)
+    plt.title('The bar chart of the change about total demands in five career categories', fontsize=20, verticalalignment='bottom')
     plt.show()
 
 
