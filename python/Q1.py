@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plot
+import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D as axes3d
 # import numpy as np
 import xlrd
@@ -24,20 +24,16 @@ for year in files:
         data_temp = {}
         for i in range(3, nrows - 1):
             data_temp[table.row(i)[1].value] = table.row(i)[2].value
-            # for j in range(, ncols - 1):
-        data[year + month] = data_temp
-        # row = table.row(4)
-        # print(row[1].value)
 
-# print(data)
+        data[year + month] = data_temp
+
 x = []
 y = []
 for time in data:
-    x.append(time[4:])
+    x.append(time[2:])
     y.append(data[time]['Sales management'])
 
-# print(len(x))
-# print(len(y))
+plt.title('Total demand of sales management')
+plt.plot(x, y)
 
-plot.bar(range(len(y)), y, color = 'rgb', tick_label = x)
-plot.show()
+plt.show()
