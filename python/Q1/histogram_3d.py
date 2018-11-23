@@ -5,7 +5,7 @@ import xlrd
 
 
 def import_demands():
-    xls = xlrd.open_workbook('../../data/demands(tagged).xls')
+    xls = xlrd.open_workbook('../../data/Q1/demands(tagged).xls')
     table = xls.sheets()[0]
     nrows = table.nrows
     ncols = table.ncols
@@ -44,10 +44,8 @@ def draw_histogram_3d():
     data = import_demands()
     categories = data['categories']
     legend = {}
-    """
-    , 'Community Service', 'Finance and Economic'
-    """
-    categories_name = ['Human Resource', 'Others', 'Science and Technology']
+
+    categories_name = ['Human Resource', 'Others', 'Science and Technology', 'Community Service', 'Finance and Economic']
 
     for category in categories_name:
 
@@ -91,11 +89,11 @@ def draw_histogram_3d():
     ax.set_xlabel('Time')
     ax.set_ylabel('Categories')
     ax.set_zlabel('Total Demands')
-    # ax.set_title('The bar chart of the change about total demands in five career categories')
-    # ax.set_title('The bar chart of the change about total demands in five career categories')
+    plt.title('The bar chart of the change about total demands in five career categories', fontsize=20,
+              verticalalignment='bottom')
 
     ax.legend(proxys, names)
-    plt.title('The bar chart of the change about total demands in five career categories', fontsize=20, verticalalignment='bottom')
+
     plt.show()
 
 

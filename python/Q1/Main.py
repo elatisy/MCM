@@ -34,7 +34,7 @@ for year in files:
         y.append(y_counter)
         y_counter += 1
 
-        file_name = '../data/' + year + '/' + month + '.xlsx'
+        file_name = '../../data/' + year + '/' + month + '.xlsx'
 
         xlsx = xlrd.open_workbook(file_name)
         table = xlsx.sheets()[0]
@@ -56,12 +56,12 @@ for year in files:
 """
 Export a xls that contents the total demands of every sector in 36 sheets
 """
-# edx.export_demands(data, sectors)
+edx.export_demands(data, sectors)
 
 """
 draw some line chart with given data
 """
-# lc.draw_line_chart(data, 'Sales management', 'Total demands of sales management')
+lc.draw_line_chart(data, 'Sales management', 'Total demands of sales management')
 
 """
 draw the 3D-histogram graph about demands of five categories
