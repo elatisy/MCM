@@ -24,4 +24,4 @@ def export_demands(data, sectors):
                 table.write(i, j, '')
             i += 1
 
-    file.save('../../data/Q1/demands.xls')
+    file.save('../data/Q1/demands.xls')

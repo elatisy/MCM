@@ -5,7 +5,7 @@ import xlrd
 
 
 def import_demands():
-    xls = xlrd.open_workbook('../../data/Q1/demands(tagged).xls')
+    xls = xlrd.open_workbook('../data/Q1/demands(tagged).xls')
     table = xls.sheets()[0]
     nrows = table.nrows
     ncols = table.ncols

@@ -1,12 +1,8 @@
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D as axes3d
-import numpy as np
 import xlrd
-import xlwt
 
-import python.Q1.line_chart as lc
-import python.Q1.histogram_3d as h3d
-import python.Q1.export_demands_xls as edx
+import Q1.python.line_chart as lc
+import Q1.python.histogram_3d as h3d
+import Q1.python.export_demands_xls as edx
 
 
 def str_to_int(string):
@@ -34,7 +30,7 @@ for year in files:
         y.append(y_counter)
         y_counter += 1
 
-        file_name = '../../data/' + year + '/' + month + '.xlsx'
+        file_name = '../data/' + year + '/' + month + '.xlsx'
 
         xlsx = xlrd.open_workbook(file_name)
         table = xlsx.sheets()[0]
