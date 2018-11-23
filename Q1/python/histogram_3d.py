@@ -4,8 +4,8 @@ import numpy as np
 import xlrd
 
 
-def import_demands():
-    xls = xlrd.open_workbook('../data/Q1/demands(tagged).xls')
+def import_demands(file = '../data/demands(tagged).xls'):
+    xls = xlrd.open_workbook(file)
     table = xls.sheets()[0]
     nrows = table.nrows
     ncols = table.ncols
@@ -74,9 +74,6 @@ def draw_histogram_3d():
         ax.bar3d(x, y, z, dx, dy, dz, color=color, zsort='average', alpha=0.05)
         proxy = plt.Rectangle((0, 0), 1, 1, fc=color)
         legend[category] = proxy
-
-        # if category == 'Others':
-        #     break
 
         counter += 1
 
