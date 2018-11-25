@@ -55,9 +55,9 @@ function [] = train_and_plot(arima_predict, data, origin_raw, plot_title)
     xlabel('sequence');
     ylabel('demand/person');
 
-    len = 5;
-    YO_length = length(Yorigin);
-    YO_verify = Yorigin((YO_length - 4));
+    % len = 5;
+    % YO_length = length(Yorigin);
+    % YO_verify = Yorigin((YO_length - 4));
 
     % Ypredict_MAPE = sum(abs(YO_verify - Ypredict(32:36)) ./ YO_verify) * 100 / len;
     % arima_predict_MAPE = sum(abs((YO_verify - arima_predict(32:36)) ./ YO_verify)) * 100 / len;
