@@ -12,6 +12,6 @@ ARIMA_predicts_hash = containers.Map(sectors, {
 
 for sector = sectors
     
-    sector = sector{1}
-    train_and_plot(ARIMA_predicts_hash(sector), data, origin_raw_hash(sector));
+    sector = sector{1};
+    train_and_plot(ARIMA_predicts_hash(sector), data, origin_raw_hash(sector), sector);
 end
